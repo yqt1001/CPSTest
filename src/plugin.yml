@@ -7,4 +7,4 @@ commands:
    cps:
       description: Starts cps test
       usage: /<command>
-      alias: [cpstest]
+      aliases: [cpstest, testcps]

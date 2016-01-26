@@ -35,11 +35,6 @@ public class ClickSpeed extends JavaPlugin implements Listener {
 	}
 	
 	@Override
-	public void onDisable() {
-		
-	}
-	
-	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		//clicks per second command
 		if(cmd.getName().equalsIgnoreCase("cps"))

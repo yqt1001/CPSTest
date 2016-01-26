@@ -62,7 +62,7 @@ public class Test {
 			@Override
 			public void run()
 			{
-				if(time > 10)
+				if(time == 10)
 				{
 					stop();
 					
@@ -71,8 +71,8 @@ public class Test {
 					p.sendMessage("§eYou clicked §a§l" + clicks + " §etimes and got §a§l"
 							+ ((double) clicks / 10.0) + " clicks per second§e!");
 				}
-				else
-					Test.sendTitleUpdatePacket(p, time);
+				
+				Test.sendTitleUpdatePacket(p, time);
 				
 				time++;
 				
