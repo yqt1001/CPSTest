@@ -33,6 +33,9 @@ public class Test {
 		
 		//send packet of an invisible giant zombie for the player to hit
 		this.sendZombieSpawnPacket();
+		
+		//send message to player
+		this.p.sendMessage("§eThe test is ready, start clicking to start the 10 second countdown!");
 	}
 	
 	public Player getPlayer() {
@@ -52,6 +55,7 @@ public class Test {
 		this.startms = System.currentTimeMillis();
 		this.sendTitleCreatePackets();
 		this.incrementClicks();
+		this.p.sendMessage("§a§lTest started. Good luck!");
 		
 		this.test = new BukkitRunnable() {
 			
@@ -60,11 +64,19 @@ public class Test {
 			{
 				Test.sendTitleUpdatePacket(p, time);
 				
-				time++;
-
-				
 				if(time > 10)
+				{
 					stop();
+					
+					//broadcast results
+					p.sendMessage("§eThe test is over...");
+					p.sendMessage("§eYou clicked §a§l" + clicks + " §etimes and got §a§l"
+							+ ((double) clicks / 10.0) + " clicks per second§e!");
+				}
+				
+				time++;
+				
+				/* a cps autoban check would go here */
 			}
 		}.runTaskTimer(ClickSpeed.getPlugin(ClickSpeed.class), 0L, 20L);
 	}

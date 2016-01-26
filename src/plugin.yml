@@ -5,4 +5,6 @@ author: yqt1001
 depend: [ProtocolLib]
 commands:
    cps:
-      description: Starts cps
+      description: Starts cps test
+      usage: /<command>
+      alias: [cpstest]
