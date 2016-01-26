@@ -1,0 +1,8 @@
+name: CPSTest
+main: mc.yqt.cpstest.ClickSpeed
+version: 1.0
+author: yqt1001
+depend: [ProtocolLib]
+commands:
+   cps:
+      description: Starts cps
