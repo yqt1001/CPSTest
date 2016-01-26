@@ -62,17 +62,17 @@ public class Test {
 			@Override
 			public void run()
 			{
-				Test.sendTitleUpdatePacket(p, time);
-				
 				if(time > 10)
 				{
 					stop();
 					
 					//broadcast results
-					p.sendMessage("§eThe test is over...");
+					p.sendMessage("§eThe test is over.");
 					p.sendMessage("§eYou clicked §a§l" + clicks + " §etimes and got §a§l"
 							+ ((double) clicks / 10.0) + " clicks per second§e!");
 				}
+				else
+					Test.sendTitleUpdatePacket(p, time);
 				
 				time++;
 				
