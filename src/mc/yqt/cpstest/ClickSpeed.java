@@ -122,14 +122,7 @@ public class ClickSpeed extends JavaPlugin implements Listener {
 		
 	//removes a specified test from active tests list
 	public static void removeTest(Test t) {
-		Iterator<Test> it = tests.iterator();
-		
-		while(it.hasNext())
-			if(it.next().equals(t))
-			{
-				it.remove();
-				return;
-			}
+		tests.remove(t);
 	}
 	
 	//gets location of zombie; right ahead of the player
